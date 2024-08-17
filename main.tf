@@ -17,7 +17,7 @@ module "security_group" {
 module "jenkins" {
   source                    = "../terraform-jenkins-pro/jenkins"
   ami_id                    = var.ec2_ami_id
-  instance_type             = "t2.medium"
+  instance_type             = "t2.small"
   tag_name                  = "Jenkins:Ubuntu Linux EC2"
   public_key                = var.public_key
   subnet_id                 = tolist(module.networking.dev_proj_1_public_subnets)[0]
